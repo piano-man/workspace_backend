@@ -1,0 +1,43 @@
+<html>
+
+<head>
+</head>
+
+<body>
+    <div id="fb-root"></div>
+    <script>
+        (function (d, s, id) {
+            var js, fjs = d.getElementsByTagName(s)[0];
+            if (d.getElementById(id)) { return; }
+            js = d.createElement(s); js.id = id;
+            js.src = "https://connect.facebook.net/en_US/sdk.js";
+            fjs.parentNode.insertBefore(js, fjs);
+        } (document, 'script', 'facebook-jssdk'));
+        window.fbAsyncInit = function () {
+            window.FB.init({
+                appId: '349615905514376',
+                cookie: true,
+                xfbml: true,
+                version: 'v2.9'
+            });
+
+            window.FB.AppEvents.logPageView();
+            window.FB.getLoginStatus(function (response) {
+                console.log(response.status);
+                //console.log(response.authResponse['userID']);
+                //statusChangeCallback(response);
+
+            });
+
+        };
+
+
+
+
+    </script>
+<div class="fb-login-button" data-max-rows="1" data-size="large" data-button-type="continue_with" data-show-faces="false"
+    data-auto-logout-link="false" data-use-continue-as="false"></div>
+
+</body>
+
+</html>
